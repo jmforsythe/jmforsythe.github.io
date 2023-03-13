@@ -2,14 +2,98 @@
 <html>
     <head>
         <title>Jonathan Forsythe</title>
+        <link rel="stylesheet" href="stylesheet.css">
     </head>
 
     <body>
-        <h1>Jonathan Forsythe</h1>
         <main>
-            <ul>
-                <li><a href="http://heatmap.jonathanforsythe.co.uk">Git Heat Map</a></li>
-            </ul>
+            <h1>Jonathan Forsythe</h1>
+            <div class="portfolio_item" id="links">
+                <a href="https://github.com/jmforsythe">GitHub</a>
+                <a href="https://www.linkedin.com/in/jonathan-forsythe-026a201a5">LinkedIn</a>
+            </div>
+            <div class="portfolio_item">
+                <div class="item_header">
+                <h2>About Me</h2>
+                <div class="collapse_button">&#709;</div>
+                </div>
+                <div class="item_body">
+                <h3>Professional Experience</h3>
+                <h4>Autodesk: 2022 - Present</h4>
+                Software Development Engineer
+
+                <h3>Education</h3>
+                <h4>University of Warwick: 2018 - 2022</h4>
+                Master of Mathematics (with Honours)
+                
+                <h3>Skills</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>HTML, CSS, Javascript</li>
+                </ul>
+                </div>
+            </div>
+            <div class="portfolio_item">
+                <div class="item_header">
+                <a class="portfolio_title" href="http://github.com/jmforsythe/Git-Heat-Map"><h2>Git Heat Map</h2></a>
+                <div class="collapse_button">&#709;</div>
+                </div>
+                <div class="item_body">
+                <img src="https://raw.githubusercontent.com/jmforsythe/Git-Heat-Map/master/example_image.png">
+                <p>Generates a navigable <a href="https://en.wikipedia.org/wiki/Treemapping">treemap</a> diagram of a git repository, with highlighting based on user-controlled filters
+                such as how much a file was changed by a specific author, which files were changed in a certain date range,
+                and highlighting files that match given file path patterns.</p>
+                <p>This is accomplished by generating a database representing commits in a repository, which can also be used to provide interesting statisitics about the activity in that repository.</p>
+
+                <h3>Skills developed</h3>
+                <ul>
+                    <li>In depth knowledge of git</li>
+                    <li>Python</li>
+                    <li>HTML, CSS, Javascript</li>
+                    <li>Text encoding</li>
+                    <li>Web hosting using NGINX and Amazon Web Services</li>
+                    <li>DNS</li>
+                </ul>
+                </div>
+            </div>
+            <div class="portfolio_item">
+                <div class="item_header">
+                <a class="portfolio_title" href="https://github.com/jmforsythe/Newton-fractal-generator"><h2>Newton Fractal Generator</h2></a>
+                <div class="collapse_button">&#709;</div>
+                </div>
+                <div class="item_body">
+                <img src="https://raw.githubusercontent.com/jmforsythe/Newton-fractal-generator/master/readme_image.png">
+                <p>Generates a <a href="https://en.wikipedia.org/wiki/Newton_fractal">Newton fractal</a> of a given polynomial.
+                Originally programmed in Java as part of a University assignment, later rewritten in C++ and several features added, such as
+                command line arguments for what polynomial to draw, width and height of image in pixels, what area of the complex plane to draw,
+                and what the maximum iteration depth of the point evaluation should be.</p>
+                <p>I have since used this program to generate desktop backgrounds for myself.</p>
+                <h3>Skills developed</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>Object Oriented Programming</li>
+                    <li>Image file encoding</li>
+                </ul>
+                </div>
+            </div>
         </main>
+
+        <script>
+            const items = document.querySelectorAll(".portfolio_item")
+            console.log(items)
+            items.forEach((item) => {
+                const button = item.querySelector(".collapse_button")
+                if (!button) return
+                const body = item.querySelector(".item_body")
+                button.addEventListener("click", () => {
+                    body.classList.toggle("hidden")
+                    if (button.innerHTML == "\u02c4") button.innerHTML = "\u02c5"
+                    else button.innerHTML = "\u02c4"
+                })
+            })
+        </script>
+
     </body>
 </html>
