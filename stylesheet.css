@@ -1,8 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-bg: #0f172a;
+    --secondary-bg: #1e293b;
+    --card-bg: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --border: #475569;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: auto;
     max-width: 600px;
-    background-color: #eeeeee;
-    color: #444444
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 20px;
 }
 
 main {
@@ -15,12 +38,16 @@ div.portfolio_item {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
 div.item_header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 1rem;
 }
 
 div.collapse_button {
@@ -28,7 +55,8 @@ div.collapse_button {
 }
 
 div.item_body {
-    border: solid 1px black;
+    border: solid 1px var(--border);
+    border-top: none;
     padding: 10px;
 }
 
@@ -40,30 +68,121 @@ div#links {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+div#links a {
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+div#links a:hover {
+    background: var(--accent-hover);
 }
 
 img {
     width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 a {
-    color: inherit;
-    text-decoration: underline;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    text-decoration: none;
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.portfolio_title {
+    color: inherit;
+}
+
+.portfolio_title:hover {
+    color: var(--accent);
 }
 
 h1 {
     align-self: center;
     margin-bottom: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
 }
 
-h2, h3, h4, h5, h6 {
+h2 {
     margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+h3 {
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+h3:first-child {
+    margin-top: 0;
+}
+
+h4 {
+    margin: 0.5rem 0 0.25rem 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+h5, h6 {
+    margin: 0;
+    font-weight: 500;
 }
 
 ul {
-    margin: 0
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
+}
+
+p {
+    color: var(--text-secondary);
+    margin: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    div.item_body {
+        padding: 0.75rem;
+    }
+    
+    div#links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
