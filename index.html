@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Jonathan Forsythe — Software Development Engineer at Autodesk. Portfolio of projects including Rugby Map, Git Heat Map, and a Newton fractal generator.">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Jonathan Forsythe">
+        <meta property="og:description" content="Software Development Engineer at Autodesk. Projects in mapping, git visualisation, and scientific graphics.">
+        <meta property="og:image" content="https://raw.githubusercontent.com/jmforsythe/Rugby-Map/main/example.png">
+        <meta property="og:url" content="https://jmforsythe.github.io/">
+        <meta name="twitter:card" content="summary_large_image">
         <title>Jonathan Forsythe</title>
         <link rel="stylesheet" href="stylesheet.css">
     </head>
@@ -10,111 +17,130 @@
     <body>
         <main>
             <h1>Jonathan Forsythe</h1>
-            <div class="portfolio_item" id="links">
+            <div class="portfolio_item card" id="links">
                 <a href="https://github.com/jmforsythe">GitHub</a>
                 <a href="https://www.linkedin.com/in/jonathan-forsythe.026a201a5">LinkedIn</a>
             </div>
-            <div class="portfolio_item">
-                <div class="item_header">
-                <h2>About Me</h2>
-                <div class="collapse_button">&#709;</div>
-                </div>
+            <section class="portfolio_item card">
+                <header class="item_header">
+                    <h2>About Me</h2>
+                    <button type="button" class="collapse_button" aria-label="Collapse section"></button>
+                </header>
                 <div class="item_body">
-                <h3>Professional Experience</h3>
-                <h4>Autodesk: 2022 - Present</h4>
-                Software Development Engineer
+                    <h3>Professional Experience</h3>
+                    <h4>Autodesk: 2022 - Present</h4>
+                    <p>Software Development Engineer</p>
 
-                <h3>Education</h3>
-                <h4>University of Warwick: 2018 - 2022</h4>
-                Master of Mathematics (with Honours)
-                
-                <h3>Skills</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>C++</li>
-                    <li>HTML, CSS, Javascript, Typescript, React</li>
-                </ul>
-                </div>
-            </div>
-            <div class="portfolio_item">
-                <div class="item_header">
-                <a class="portfolio_title" href="https://github.com/jmforsythe/Git-Heat-Map"><h2>Git Heat Map</h2></a>
-                <div class="collapse_button">&#709;</div>
-                </div>
-                <div class="item_body">
-                <img src="https://raw.githubusercontent.com/jmforsythe/Git-Heat-Map/master/img/example_image.png">
-                <p>Generates a navigable <a href="https://en.wikipedia.org/wiki/Treemapping">treemap</a> diagram of a git repository, with highlighting based on user-controlled filters
-                such as how much a file was changed by a specific author, which files were changed in a certain date range,
-                and highlighting files that match given file path patterns.</p>
-                <p>This is accomplished by generating a database representing commits in a repository, which can also be used to provide interesting statisitics about the activity in that repository.</p>
+                    <h3>Education</h3>
+                    <h4>University of Warwick: 2018 - 2022</h4>
+                    <p>Master of Mathematics (with Honours)</p>
 
-                Designed to be self hosted to support internal repositories, but a working version is hosted at <a href="https://heatmap.jonathanforsythe.co.uk">heatmap.jonathanforsythe.co.uk</a> with some popular GitHub repositories as examples.
-
-                <h3>Skills developed</h3>
-                <ul>
-                    <li>In depth knowledge of git</li>
-                    <li>Python</li>
-                    <li>HTML, CSS, Javascript</li>
-                    <li>Text encoding</li>
-                    <li>Web hosting using NGINX and Amazon Web Services</li>
-                    <li>DNS</li>
-                </ul>
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>HTML, CSS, Javascript, Typescript, React</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="portfolio_item">
-                <div class="item_header">
-                <a class="portfolio_title" href="https://github.com/jmforsythe/Rugby-Map"><h2>Rugby Map</h2></a>
-                <div class="collapse_button">&#709;</div>
-                </div>
+            </section>
+            <section class="portfolio_item card">
+                <header class="item_header">
+                    <h2><a class="portfolio_title" href="https://github.com/jmforsythe/Rugby-Map">Rugby Map</a></h2>
+                    <button type="button" class="collapse_button" aria-label="Collapse section"></button>
+                </header>
                 <div class="item_body">
-                <img src="https://raw.githubusercontent.com/jmforsythe/Rugby-Map/main/example.png" alt="Rugby Map Example" style="max-width:100%;height:auto;">
-                <p>Collects league and team data for English Rugby Union, and generates interactive maps showing their geographic distribution.</p>
-                <h3>Skills developed</h3>
-                <ul>
-                    <li>JavaScript (Leaflet.js for mapping)</li>
-                    <li>Data collection</li>
-                    <li>Python</li>
-                    <li>HTML, CSS</li>
-                    <li>Data visualization</li>
-                    <li>GeoJSON and open data integration</li>
-                    <li>UI/UX design</li>
-                </ul>
+                    <a class="project_preview" href="https://rugbyunionmap.uk/"><img src="https://raw.githubusercontent.com/jmforsythe/Rugby-Map/main/example.png" alt="Interactive map of English rugby union clubs coloured by league tier"></a>
+                    <p>An interactive web map of English Rugby Union, plotting every club across the league pyramid so users can explore the sport's geographic spread at a glance.
+                    Clubs are colour-coded by league tier, and the map supports filtering by league and county so users can quickly see local rivalries, travel distances, and regional strongholds.</p>
+                    <p>Team locations and league standings are scraped from publicly available sources and combined with open GeoJSON boundary data to produce a rich, up-to-date visualisation of the English club rugby landscape.</p>
+                    <p>The maps are hosted at <a href="https://rugbyunionmap.uk/">rugbyunionmap.uk</a>, including the current season, match-day view, team browser, custom map builder, and past seasons. Source code is on <a href="https://github.com/jmforsythe/Rugby-Map">GitHub</a>.</p>
+                    <h3>Skills developed</h3>
+                    <ul>
+                        <li><strong>AI-assisted development</strong> — LLMs and agentic coding tools for scaffolding, refactors, and faster iteration.</li>
+                        <li><strong>Prompt engineering</strong> — Reviewing AI-generated code for correctness and quality.</li>
+                        <li>JavaScript and interactive mapping with Leaflet.js</li>
+                        <li>Python for data scraping, cleaning, and transformation pipelines</li>
+                        <li>Working with GeoJSON and integrating open data sources</li>
+                        <li>Data visualisation and information design for dense geographic data</li>
+                        <li>HTML and CSS for responsive UI and UX</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="portfolio_item">
-                <div class="item_header">
-                <a class="portfolio_title" href="https://github.com/jmforsythe/Newton-fractal-generator"><h2>Newton Fractal Generator</h2></a>
-                <div class="collapse_button">&#709;</div>
-                </div>
+            </section>
+            <section class="portfolio_item card">
+                <header class="item_header">
+                    <h2><a class="portfolio_title" href="https://github.com/jmforsythe/Git-Heat-Map">Git Heat Map</a></h2>
+                    <button type="button" class="collapse_button" aria-label="Collapse section"></button>
+                </header>
                 <div class="item_body">
-                <img src="https://raw.githubusercontent.com/jmforsythe/Newton-fractal-generator/master/readme_image.png">
-                <p>Generates a <a href="https://en.wikipedia.org/wiki/Newton_fractal">Newton fractal</a> of a given polynomial.
-                Originally programmed in Java as part of a University assignment, later rewritten in C++ and several features added, such as
-                command line arguments for what polynomial to draw, width and height of image in pixels, what area of the complex plane to draw,
-                and what the maximum iteration depth of the point evaluation should be.</p>
-                <p>I have since used this program to generate desktop backgrounds for myself.</p>
-                <h3>Skills developed</h3>
-                <ul>
-                    <li>C++</li>
-                    <li>Java</li>
-                    <li>Object Oriented Programming</li>
-                    <li>Image file encoding</li>
-                </ul>
+                    <img src="https://raw.githubusercontent.com/jmforsythe/Git-Heat-Map/master/img/example_image.png" alt="Git repository treemap coloured by file activity">
+                    <p>A self-hostable tool that turns any git repository into a navigable <a href="https://en.wikipedia.org/wiki/Treemapping">treemap</a>, where each file is sized by its footprint in the codebase and highlighted according to user-controlled filters.
+                    Filters include contributions by a specific author, changes made within a chosen date range, and file path patterns, making it easy to spot hotspots of activity, ownership, and churn in large codebases.</p>
+                    <p>Under the hood, commit history is parsed into a local database that powers the visualisation and unlocks further statistics about repository activity, such as author contribution breakdowns and file-level change frequency.</p>
+                    <p>Designed to be self-hosted for private or internal repositories, with a public demo available at <a href="https://heatmap.jonathanforsythe.co.uk">heatmap.jonathanforsythe.co.uk</a> showcasing several well-known open-source projects.</p>
+                    <h3>Skills developed</h3>
+                    <ul>
+                        <li>In-depth knowledge of git internals and commit history parsing</li>
+                        <li>Python for data processing and database generation</li>
+                        <li>HTML, CSS, and JavaScript for interactive front-end visualisation</li>
+                        <li>Handling text encoding and edge cases across diverse repositories</li>
+                        <li>Deploying and hosting web applications with NGINX on Amazon Web Services</li>
+                        <li>DNS configuration and domain management</li>
+                    </ul>
                 </div>
-            </div>
+            </section>
+            <section class="portfolio_item card">
+                <header class="item_header">
+                    <h2><a class="portfolio_title" href="https://github.com/jmforsythe/Newton-fractal-generator">Newton Fractal Generator</a></h2>
+                    <button type="button" class="collapse_button" aria-label="Collapse section"></button>
+                </header>
+                <div class="item_body">
+                    <img src="https://raw.githubusercontent.com/jmforsythe/Newton-fractal-generator/master/readme_image.png" alt="Newton fractal image with roots as coloured basins">
+                    <p>A command-line program that renders high-resolution <a href="https://en.wikipedia.org/wiki/Newton_fractal">Newton fractals</a> for arbitrary polynomials, colouring each pixel by which root it converges to under Newton's method and how quickly it gets there.
+                    Originally written in Java for a University assignment, it was later rewritten from scratch in C++ with a richer feature set, including configurable polynomials, output resolution, viewport in the complex plane, and maximum iteration depth, all controllable from the command line.</p>
+                    <p>I have since used the generator to produce custom desktop wallpapers from mathematically interesting polynomials.</p>
+                    <h3>Skills developed</h3>
+                    <ul>
+                        <li>C++ and modern build tooling</li>
+                        <li>Java and cross-language porting</li>
+                        <li>Object-oriented design and numerical algorithms</li>
+                        <li>Image file encoding and pixel-level rendering</li>
+                    </ul>
+                </div>
+            </section>
         </main>
 
         <script>
-            const items = document.querySelectorAll(".portfolio_item")
-            items.forEach((item) => {
-                const button = item.querySelector(".collapse_button")
-                if (!button) return
+            const COLLAPSED = "\u02c4"
+            const EXPANDED = "\u02c5"
+
+            document.querySelectorAll(".portfolio_item").forEach((item) => {
+                const header = item.querySelector(".item_header")
                 const body = item.querySelector(".item_body")
-                button.addEventListener("click", () => {
+                const chevron = item.querySelector(".collapse_button")
+                if (!header || !body || !chevron) return
+
+                function setAriaExpanded(expanded) {
+                    chevron.setAttribute("aria-expanded", expanded ? "true" : "false")
+                    chevron.setAttribute("aria-label", expanded ? "Collapse section" : "Expand section")
+                }
+
+                function syncChevron() {
+                    const hidden = body.classList.contains("hidden")
+                    chevron.textContent = hidden ? COLLAPSED : EXPANDED
+                    setAriaExpanded(!hidden)
+                }
+
+                function toggle() {
                     body.classList.toggle("hidden")
-                    if (button.innerHTML == "\u02c4") button.innerHTML = "\u02c5"
-                    else button.innerHTML = "\u02c4"
+                    syncChevron()
+                }
+
+                header.addEventListener("click", (e) => {
+                    if (e.target.closest("a.portfolio_title")) return
+                    toggle()
                 })
+
+                syncChevron()
             })
         </script>
 
